@@ -1,2 +1,2 @@
-# example-scala-library
-example Scala library
+## Scala 3 example library
+
