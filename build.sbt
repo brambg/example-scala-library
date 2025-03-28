@@ -1,5 +1,9 @@
 val scala3Version = "3.3.1"
 
+// sbt-github-actions defaults to using JDK 8 for testing and publishing.
+// The following adds JDK 17 for testing.
+ThisBuild / githubWorkflowJavaVersions += JavaSpec.temurin("17")
+
 lazy val root = project
   .in(file("."))
   .settings(
