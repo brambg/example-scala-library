@@ -21,7 +21,7 @@ lazy val root = project
 
     githubOwner := _githubOwner,
     githubRepository := _githubRepository,
-    publishTo := Some(s"GitHub $_githubOwner Apache Maven Packages" at s"https://maven.pkg.github.com/$_githubOwner/$_githubRepository"),
+    publishTo := Some(s"GitHub ${_githubOwner} Apache Maven Packages" at s"https://maven.pkg.github.com/${_githubOwner}/${_githubRepository}"),
     publishMavenStyle := true,
 
     libraryDependencies ++= Seq(
