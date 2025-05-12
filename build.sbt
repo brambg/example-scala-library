@@ -7,18 +7,21 @@ val scala3Version = "3.3.1"
 // The following adds JDK 17 for testing.
 ThisBuild / githubWorkflowJavaVersions += JavaSpec.temurin("17")
 
+val _githubOwner = "brambg"
+val _githubRepository = "example-scala-library"
+
 lazy val root = project
   .in(file("."))
   .settings(
     organization := "nl.scala.example",
-    name := "example-scala-library",
+    name := _githubRepository,
     version := "1.0.0",
     versionScheme := Some("early-semver"),
     scalaVersion := scala3Version,
 
-    githubOwner := "brambg",
-    githubRepository := "example-scala-library",
-    publishTo := Some(s"GitHub $githubOwner Apache Maven Packages" at s"https://maven.pkg.github.com/$githubOwner/$githubRepository"),
+    githubOwner := _githubOwner,
+    githubRepository := _githubRepository,
+    publishTo := Some(s"GitHub $_githubOwner Apache Maven Packages" at s"https://maven.pkg.github.com/$_githubOwner/$_githubRepository"),
     publishMavenStyle := true,
 
     libraryDependencies ++= Seq(
@@ -28,7 +31,7 @@ lazy val root = project
     credentials += Credentials(
       "GitHub Package Registry",
       "maven.pkg.github.com",
-      s"$githubOwner",
+      _githubOwner,
       System.getenv("GITHUB_TOKEN")
     )
 
