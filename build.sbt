@@ -28,7 +28,6 @@ lazy val root = project
     publishTo := Some(s"GitHub $myGithubOwner Apache Maven Packages" at s"https://maven.pkg.github.com/$myGithubOwner/$myGithubRepository"),
     publishMavenStyle := true,
     publishConfiguration := publishConfiguration.value.withOverwrite(true),
-    pushRemoteCacheConfiguration := pushRemoteCacheConfiguration.value.withOverwrite(true),
 
     credentials += Credentials(
       "GitHub Package Registry",
