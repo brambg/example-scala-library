@@ -9,8 +9,14 @@ class HelloFactoryTestSuite extends AnyFunSuite {
     HelloFactory.greet("world")
     assert(true)
   }
+
   test("curse") {
     HelloFactory.curse("Donald")
+    assert(true)
+  }
+
+  test("question") {
+    HelloFactory.question("Mike")
     assert(true)
   }
 
