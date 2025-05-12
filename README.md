@@ -21,3 +21,6 @@ https://medium.com/@supermanue/how-to-publish-a-scala-library-in-github-bfb0fa39
 https://gist.github.com/davideicardi/89b6d0f816a2dc61ba1c3f5a75268a92
 
 https://gist.github.com/KiyonoKara/f27227a28d0aa7a82bcdefedf00ee1f7
+
+
+Settings / Actions / General / Workflow permissions : Read and write permissions
