@@ -15,7 +15,7 @@ lazy val root = project
   .settings(
     organization := "nl.scala.example",
     name := myGithubRepository,
-    version := "1.0.1",
+    version := "1.0.2",
     versionScheme := Some("early-semver"),
     scalaVersion := scala3Version,
 
