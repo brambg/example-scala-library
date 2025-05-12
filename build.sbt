@@ -1,3 +1,6 @@
+import sbt.Credentials
+import sbt.Keys.credentials
+
 val scala3Version = "3.3.1"
 
 // sbt-github-actions defaults to using JDK 8 for testing and publishing.
@@ -12,10 +15,21 @@ lazy val root = project
     version := "1.0.0",
     versionScheme := Some("early-semver"),
     scalaVersion := scala3Version,
-    publishTo := Some(MavenCache("local-maven", file("/Users/bram/.m2/repository"))),
+
+    githubOwner := "brambg",
+    githubRepository := "example-scala-library",
+    publishTo := Some(s"GitHub $githubOwner Apache Maven Packages" at s"https://maven.pkg.github.com/$githubOwner/$githubRepository"),
+    publishMavenStyle := true,
+
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.19" % "test"
     ),
-    githubOwner := "brambg",
-    githubRepository := "example-scala-library"
+
+    credentials += Credentials(
+      "GitHub Package Registry",
+      "maven.pkg.github.com",
+      s"$githubOwner",
+      System.getenv("GITHUB_TOKEN")
+    )
+
   )
